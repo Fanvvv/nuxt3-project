@@ -1,0 +1,1 @@
+import type { $Fetch } from "ofetch"
