@@ -1,13 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-    devtools: { enabled: true },
-    css: ["~/assets/css/main.css"],
-    postcss: {
-        plugins: {
-            tailwindcss: {},
-            autoprefixer: {},
-        },
-    },
+module.exports = {
     content: [
         "./components/**/*.{js,vue,ts}",
         "./layouts/**/*.vue",
