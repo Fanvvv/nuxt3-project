@@ -8,6 +8,9 @@ dependencies:
   '@css-render/vue3-ssr':
     specifier: ^0.15.12
     version: 0.15.12(vue@3.4.15)
+  '@vicons/ionicons5':
+    specifier: ^0.12.0
+    version: 0.12.0
   naive-ui:
     specifier: ^2.37.3
     version: 2.37.3(vue@3.4.15)
@@ -2350,6 +2353,10 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    dev: false
+
+  /@vicons/ionicons5@0.12.0:
+    resolution: {integrity: sha512-Iy1EUVRpX0WWxeu1VIReR1zsZLMc4fqpt223czR+Rpnrwu7pt46nbnC2ycO7ItI/uqDLJxnbcMC7FujKs9IfFA==}
     dev: false
 
   /@vitejs/plugin-vue-jsx@3.1.0(vite@5.0.12)(vue@3.4.15):
