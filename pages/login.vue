@@ -74,7 +74,7 @@ function onSubmit() {
         loading.value = true
 
         const { data, error } = type.value === "login" ? await $api.users.login(form) : await $api.users.register(form)
-        console.log(data.value)
+
         loading.value = false
 
         if (error.value)
@@ -86,10 +86,10 @@ function onSubmit() {
         if (type.value === "login") {
             // 将用户登录成功返回的token存储在cookie当中，用户登录成功的标识
             const token = useCookie("token")
-            // token.value = data.value.token
+            token.value = data.value!.token
 
             // 跳转
-            // navigateTo(route.query.from as string || "/", { replace: true })
+            navigateTo(route.query.from as string || "/", { replace: true })
         }
         else {
             // 切换回登录页

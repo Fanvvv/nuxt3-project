@@ -3,7 +3,9 @@
 </script>
 
 <template>
-    头部导航
+    <div class="z-50 h-[50px] fixed top-0 left-0 right-0 w-full bg-white shadow-sm">
+        标题
+    </div>
 </template>
 
 <style scoped>
