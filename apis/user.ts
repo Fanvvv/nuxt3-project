@@ -8,23 +8,19 @@ export interface ILoginForm {
 }
 
 export interface ILoginResponse {
-    code: number
-    data: {
-        avatar: string
-        created_time: string
-        desc: string
-        email: null
-        id: number
-        nickname: string
-        phone: string
-        sex: string
-        status: number
-        token: string
-        updated_time: string
-        username: string
-        weixin_openid: null
-    }
-    msg: string
+    avatar: string
+    created_time: string
+    desc: string
+    email: null
+    id: number
+    nickname: string
+    phone: string
+    sex: string
+    status: number
+    token: string
+    updated_time: string
+    username: string
+    weixin_openid: null
 }
 
 class UsersModule extends FanRequest {

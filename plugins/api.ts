@@ -1,9 +1,11 @@
 import type { FetchOptions } from "ofetch"
 import { $fetch } from "ofetch"
 import UsersModule from "~/apis/user"
+import IndexModule from "~/apis"
 
 interface IApiInstance {
     users: UsersModule
+    index: IndexModule
 }
 
 export default defineNuxtPlugin(() => {
@@ -20,6 +22,7 @@ export default defineNuxtPlugin(() => {
 
     const modules: IApiInstance = {
         users: new UsersModule(apiFecther),
+        index: new IndexModule(apiFecther),
     }
 
     return {

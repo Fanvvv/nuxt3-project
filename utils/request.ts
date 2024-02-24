@@ -23,8 +23,9 @@ class FanRequest {
             url,
             {
                 method,
+                // 响应拦截器
                 onResponse({ response }) {
-                    if (response._data.code === 2000) {
+                    if (response._data.code === 20000) {
                         return response._data = response._data.data
                     }
                     else {
