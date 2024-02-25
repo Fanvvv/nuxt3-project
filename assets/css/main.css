@@ -7,3 +7,12 @@
 @tailwind utilities;
 /* 可以用于创建自定义的样式变体，在需要时灵活地应用它们 */
 /*@tailwind variants;*/
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
