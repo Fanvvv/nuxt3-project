@@ -6,7 +6,7 @@ import PageFooter from "~/components/PageFooter.vue"
 <template>
     <div class="bg-gray-100 flex flex-col min-h-screen min-w-[1000px]">
         <NavBar />
-        <main>
+        <main class="container">
             <slot />
         </main>
         <PageFooter />
