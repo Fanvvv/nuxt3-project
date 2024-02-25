@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Search } from "@vicons/ionicons5"
-
 const { $api } = useNuxtApp()
 const { data, error } = await $api.index.getIndexData({}, { lazy: true, server: false })
 
@@ -9,11 +7,22 @@ if (process.server && error.value)
 </script>
 
 <template>
-    <div class="h-[100px]">
-        {{ data }}
-        <n-icon>
-            <Search />
-        </n-icon>
+    <div>
+        <template v-for="item in data" :key="item.type">
+            <!--          轮播图 -->
+            <Banner v-if="item.type === 'swiper'" :data="item.data" />
+            <!--          广告 -->
+            <template v-if="item.type === 'imageAd'">
+                <img
+                    class="h-[100px] w-full rounded mb-6 cursor-pointer"
+                    :src="item.data[0].src"
+                    :alt="item.data[0].course_title"
+                    @click="$commonOpen(item.data[0])"
+                >
+            </template>
+            <ImageNav v-if="item.type === 'icons'" :data="item.data" />
+            <ListCard v-if="item.type === 'promotion'" :title="item.title" :data="item.data" />
+        </template>
     </div>
 </template>
 
