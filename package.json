@@ -12,6 +12,7 @@
   "dependencies": {
     "@css-render/vue3-ssr": "^0.15.12",
     "@vicons/ionicons5": "^0.12.0",
+    "@vueuse/motion": "^2.1.0",
     "naive-ui": "^2.37.3",
     "nuxt": "^3.10.1",
     "unplugin-auto-import": "^0.17.5",
