@@ -8,6 +8,10 @@ module.exports = {
         "./app.vue",
         "./error.vue",
     ],
+    // 关闭预加载，解决与naiveUI样式冲突，导致按钮等组件样式错乱的问题
+    corePlugins: {
+        preflight: false,
+    },
     theme: {
         extend: {},
     },
