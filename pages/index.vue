@@ -1,6 +1,14 @@
 <script setup lang="ts">
-const { $api } = useNuxtApp()
+const { $api, $commonOpen } = useNuxtApp()
 const { data, error } = await $api.index.getIndexData({}, { lazy: true, server: false })
+
+useHead({
+    title: "首页",
+    meta: [
+        { name: "description", content: "练习技术的项目" },
+        { name: "keywords", content: "nuxt3, vue3, vite, tailwindcss, typescript" },
+    ],
+})
 
 if (process.server && error.value)
     throw new Error(error.value?.data?.data)
@@ -21,7 +29,8 @@ if (process.server && error.value)
                 >
             </template>
             <ImageNav v-if="item.type === 'icons'" :data="item.data" />
-            <ListCard v-if="item.type === 'promotion'" :title="item.title" :data="item.data" />
+            <ListCard v-if="item.type === 'list'" :title="item.title" :data="item.data" />
+            <ListCard v-if="item.type === 'promotion'" :title="item.title" :data="item.data" :type="item.listType" />
         </template>
     </div>
 </template>
