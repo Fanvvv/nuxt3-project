@@ -43,6 +43,37 @@ export interface DatumDatum {
     [property: string]: any
 }
 
+export interface IGroupListRequest {
+    page?: string | number
+    usable?: string | number
+    limit?: string | number
+}
+export interface IGroupListResponse {
+    code: number
+    data: Data
+    msg: string
+    [property: string]: any
+}
+
+export interface Data {
+    count: number
+    rows: Row[]
+    [property: string]: any
+}
+
+export interface Row {
+    cover?: string
+    end_time?: string
+    group_id?: number
+    id?: number
+    price?: string
+    start_time?: string
+    t_price?: string
+    title?: string
+    type?: string
+    [property: string]: any
+}
+
 export interface ICouponListResponse {
     code: number
     data: Datum[]
