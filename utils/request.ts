@@ -11,14 +11,8 @@ class FanRequest {
     async call<T>(
         method: string,
         url: string,
-        data?: object,
         options: FetchOptions<"json"> = {},
     ): Promise<T> {
-        if (method === "GET")
-            options.query = data
-        else
-            options.body = data
-
         return this.$fetch<T>(
             url,
             {
@@ -38,20 +32,20 @@ class FanRequest {
         )
     }
 
-    get<T>(url: string, data?: object, options?: FetchOptions<"json">) {
-        return this.call<T>("GET", url, data, options)
+    get<T>(url: string, options?: FetchOptions<"json">) {
+        return this.call<T>("GET", url, options)
     }
 
-    post<T>(url: string, data?: object, options?: FetchOptions<"json">) {
-        return this.call<T>("POST", url, data, options)
+    post<T>(url: string, options?: FetchOptions<"json">) {
+        return this.call<T>("POST", url, options)
     }
 
-    put<T>(url: string, data?: object, options?: FetchOptions<"json">) {
-        return this.call<T>("PUT", url, data, options)
+    put<T>(url: string, options?: FetchOptions<"json">) {
+        return this.call<T>("PUT", url, options)
     }
 
-    delete<T>(url: string, data?: object, options?: FetchOptions<"json">) {
-        return this.call<T>("DELETE", url, data, options)
+    delete<T>(url: string, options?: FetchOptions<"json">) {
+        return this.call<T>("DELETE", url, options)
     }
 }
 
