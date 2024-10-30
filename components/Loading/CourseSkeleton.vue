@@ -1,0 +1,21 @@
+<script setup lang="ts">
+
+</script>
+
+<template>
+    <n-grid :x-gap="20" :cols="4">
+        <n-grid-item v-for="i in 8" :key="i">
+            <n-card class="mb-5">
+                <template #cover>
+                    <fan-skeleton height="150px" width="100%" />
+                </template>
+                <fan-skeleton height="30px" width="50%" class="my-2" />
+                <fan-skeleton width="60%" />
+            </n-card>
+        </n-grid-item>
+    </n-grid>
+</template>
+
+<style scoped>
+
+</style>
