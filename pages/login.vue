@@ -7,7 +7,7 @@ import {
     createDiscreteApi,
 } from "naive-ui"
 import type { FormItemRule, FormValidationError } from "naive-ui"
-import type { ILoginForm } from "~/apis/user"
+import type { ILoginForm } from "~/apis/types/user"
 
 interface Rules {
     username: FormItemRule[]
