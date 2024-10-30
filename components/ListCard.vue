@@ -1,8 +1,23 @@
 <script setup lang="ts">
-defineProps({
-    title: String,
-    data: Array,
-})
+import type { IGroupListResponse } from "~/apis/types"
+
+const props = defineProps<{
+    title: string
+    data: IGroupListResponse[]
+    type?: string
+}>()
+
+const { $api } = useNuxtApp()
+const pdata = ref(props.data || [])
+
+if (props.type === "group") {
+    const { data } = await $api.index.getGroupList({
+        page: 1,
+        limit: 8,
+        usable: 1,
+    })
+    pdata.value = data.value!.rows ?? []
+}
 </script>
 
 <template>
@@ -14,8 +29,10 @@ defineProps({
             </n-button>
         </div>
         <n-grid x-gap="12" :cols="4" class="mb-6">
-            <n-gi v-for="item in data" :key="item.id">
-                <div>test</div>
+            <n-gi v-for="(item, index) in pdata" :key="index">
+                <div>
+                    <CourseList :item="item" />
+                </div>
             </n-gi>
         </n-grid>
     </div>
